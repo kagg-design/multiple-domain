@@ -1,51 +1,68 @@
 <?php
+/**
+ * Fields view.
+ *
+ * @package multiple-domain
+ */
 
 /**
- * Making sure the required vars are set.
+ * View data.
+ *
+ * @global array $data
  */
-assert(isset($count) && isset($protocol) && isset($host) && isset($base) && isset($langField));
 
-?><p class="multiple-domain-domain">
-    <select
-        name="multiple-domain-domains[<?php echo $count; ?>][protocol]"
-        title="<?php _e('Protocol', 'multiple-domain'); ?>"
-    >
-        <option
-            value="auto"
-            <?php if (empty($protocol) || $protocol === 'auto') : ?>
-                selected
-            <?php endif; ?>
-        >Auto</option>
-        <option
-            value="http"
-            <?php if ($protocol === 'http') : ?>
-                selected
-            <?php endif; ?>
-        >http://</option>
-        <option
-            value="https"
-            <?php if ($protocol === 'https') : ?>
-                selected
-            <?php endif; ?>
-        >https://</option>
-    </select>
-    <input
-        type="text"
-        name="multiple-domain-domains[<?php echo $count; ?>][host]"
-        value="<?php echo $host ?: ''; ?>"
-        class="regular-text code"
-        placeholder="example.com"
-        title="<?php _e('Domain', 'multiple-domain'); ?>"
-    >
-    <input
-        type="text"
-        name="multiple-domain-domains[<?php echo $count; ?>][base]"
-        value="<?php echo $base ?: ''; ?>"
-        class="regular-text code"
-        placeholder="/base/path" title="<?php _e('Base path restriction', 'multiple-domain'); ?>"
-    >
-    <?php echo $langField; ?>
-    <button type="button" class="button multiple-domain-remove">
-        <span class="required"><?php _e('Remove', 'multiple-domain'); ?></span>
-    </button>
+?>
+<p class="multiple-domain-domain">
+	<select
+			name="multiple-domain-domains[<?php echo esc_attr( $data['count'] ); ?>][protocol]"
+			title="<?php esc_html_e( 'Protocol', 'multiple-domain' ); ?>"
+	>
+		<option
+				value="auto"
+			<?php if ( empty( $data['protocol'] ) || 'auto' === $data['protocol'] ) : ?>
+				selected
+			<?php endif; ?>
+		>
+			Auto
+		</option>
+		<option
+				value="http"
+			<?php if ( 'http' === $data['protocol'] ) : ?>
+				selected
+			<?php endif; ?>
+		>
+			http://
+		</option>
+		<option
+				value="https"
+			<?php if ( 'https' === $data['protocol'] ) : ?>
+				selected
+			<?php endif; ?>
+		>
+			https://
+		</option>
+	</select>
+	<input
+			type="text"
+			name="multiple-domain-domains[<?php echo esc_attr( $data['count'] ); ?>][host]"
+			value="<?php echo esc_html( $data['host'] ?: '' ); ?>"
+			class="regular-text code"
+			placeholder="example.com"
+			title="<?php esc_html_e( 'Domain', 'multiple-domain' ); ?>"
+	>
+	<input
+			type="text"
+			name="multiple-domain-domains[<?php echo esc_attr( $data['count'] ); ?>][base]"
+			value="<?php echo esc_html( $data['base'] ?: '' ); ?>"
+			class="regular-text code"
+			placeholder="/base/path"
+			title="<?php esc_html_e( 'Base path restriction', 'multiple-domain' ); ?>"
+	>
+	<?php
+	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo $data['lang_field'];
+	?>
+	<button type="button" class="button multiple-domain-remove">
+		<span class="required"><?php esc_html_e( 'Remove', 'multiple-domain' ); ?></span>
+	</button>
 </p>

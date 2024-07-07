@@ -1,19 +1,31 @@
 <?php
+/**
+ * Lang view.
+ *
+ * @package multiple-domain
+ */
 
 /**
- * Making sure the required vars are set.
+ * View data.
+ *
+ * @global array $data
  */
-assert(isset($count) && isset($locales) && isset($lang));
 
-?><select name="multiple-domain-domains[<?php echo $count; ?>][lang]">
-    <option value=""><?php _e('None', 'multiple-domain'); ?></option>
-    <option value="" disabled="disabled">--</option>
-    <?php foreach ($locales as $code => $name) : ?>
-        <option
-            value="<?php echo esc_attr($code); ?>"
-            <?php if ($lang === $code) : ?>
-                selected
-            <?php endif; ?>
-        ><?php echo $name; ?></option>
-    <?php endforeach; ?>
-</select>
+?>
+<label>
+	<select name="multiple-domain-domains[<?php echo esc_attr( $data['count'] ); ?>][lang]">
+		<option value="">
+			<?php esc_html_e( 'None', 'multiple-domain' ); ?>
+		</option>
+		<option value="" disabled="disabled">--</option>
+		<?php foreach ( $data['locales'] as $code => $name ) : ?>
+			<option value="<?php echo esc_attr( $code ); ?>"
+				<?php if ( $data['lang'] === $code ) : ?>
+					selected
+				<?php endif; ?>
+			>
+				<?php echo esc_attr( $name ); ?>
+			</option>
+		<?php endforeach; ?>
+	</select>
+</label>

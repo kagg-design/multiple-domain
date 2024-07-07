@@ -1,29 +1,27 @@
 === Multiple Domain ===
-Contributors: sirjavik, mrelliwood, goinput, GustavoStraube, cyberaleks, jffaria
+Contributors: sirjavik, mrelliwood, goinput, GustavoStraube, cyberaleks, jffaria, kaggdesign
 Tags: multiple, domains, redirect
-Requires at least: 4.0
-Tested up to: 5.7
-Stable tag: 1.0.7
+Requires at least: 4.9
+Tested up to: 6.6
+Stable tag: 2.0.0
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows you to have multiple domains in a single Wordpress installation and enables custom redirects for each
+This plugin allows you to have multiple domains in a single WordPress installation and enables custom redirects for each
 domain.
 
 == Description ==
 
-Important: This plugin has a new maintainer. So the plugin will now be active developed again, and it's now part of [goINPUT](https://goinput.de).
-
-Multiple Domain allows you having more than one domain in a single WordPress installation. This plugin doesn't support
+Multiple Domain allows you to have more than one domain in a single WordPress installation. This plugin doesn't support
 more than one theme or advanced customizations for each domain. It's only intended to enable constant navigation under
 many domains. For a more complex setup, there is
 [WordPress Multisite (MU)](https://codex.wordpress.org/Create_A_Network).
 
-When there is more than one domain set in your host, all links and resources will point to the default domain. This is
-the default WordPress behavior. With Multiple Domain installed and properly configured, it'll update all link on the
+When more than one domain is set in your host, all links and resources will point to the default domain. This is
+the default WordPress behavior. With "Multiple Domain" installed and properly configured, it will update all links on the
 fly. This way, the user navigation will be end-to-end under the same domain.
 
-You can also set an optional base URL. If you want only a set of URL's available under a given domain, you can use this
+You can also set an optional base URL. If you want only a set of URL available under a given domain, you can use this
 restriction.
 
 Additionally, a language can be set for each domain. The language will be used to add `<link>` tags with `hreflang`
@@ -47,7 +45,7 @@ Feel free to open a [pull request](https://github.com/goINPUT-IT-Solutions/multi
 on how to fix or the best approach, start a discussion on the appropriate thread.
 
 If you want to add a new feature, please [open an issue](https://github.com/goINPUT-IT-Solutions/multiple-domain/issues/new)
-explaining the feature and how it would help the users before start writing your code.
+explaining the feature and how it would help the users before starting writing your code.
 
 **Donations**
 
@@ -60,18 +58,18 @@ No. You have to set additional domains, DNS, and everything else to use this plu
 
 = Can I have a different theme/content/plugins for each domain? =
 
-Nope. If you want a complex set up like this, you may be interested in WordPress Multisite. It's delivered with every
+Nope. If you want a complex setup like this, you may be interested in WordPress Multisite. It's delivered with every
 WordPress installation since 3.0, you can find more info here: https://codex.wordpress.org/Create_A_Network.
 
-= There is a way to add domain based logic to my themes? =
+= There is a way to add domain-based logic to my themes? =
 
 Absolutely. You can use the `MULTIPLE_DOMAIN_DOMAIN` and `MULTIPLE_DOMAIN_ORIGINAL_DOMAIN` constants to get the current
 and original domains. Just notice that since the value of the first one is checked against plugin settings, it may not
 reflect the actual domain in `HTTP_HOST` element from `$_SERVER` or user's browser. They also may include the host port
-when it's different than 80 (default HTTP port) or 443 (default HTTPS port).
+when it's different from 80 (default HTTP port) or 443 (default HTTPS port).
 
 **Notice**: in prior versions these constants were wrongly prefixed with `MULTPLE_`, missing the "I". The old constants
-are now deprecated. They still available for backcompat but will be removed in future releases.
+are now deprecated. They are still available for backcompat but will be removed in future releases.
 
 = Can I create a custom access restriction logic for each domain? =
 
@@ -85,17 +83,17 @@ in mind the value in this constant doesn't necessarily reflect the actual user l
 language set in the plugin config. Also notice the language may be `null`.
 
 **Notice**: in prior versions these constants were wrongly prefixed with `MULTPLE_`, missing the "I". The old constants
-are now deprecated. They still available for backcompat but will be removed in future releases.
+are now deprecated. They are still available for backcompat but will be removed in future releases.
 
 = Can I show the current domain in the content of posts or pages? =
 
-Yes. There is a shortcode available for that. Just add `[multiple_domain]` to the post/page and it'll be replaced by
+Yes. There is a shortcode available for that. Just add `[multiple_domain]` to the post/page, and it'll be replaced by
 the current domain when viewing the content. You can write things like "Welcome to [multiple_domain]!", which would be
 rendered as "Welcome to mydomain.com!".
 
 = What domains should I add to the plugin setup? =
 
-Any domain you're site is served from must be added to the plugin configuration. Even `www` variations and the original
+Any domain your site is served from must be added to the plugin configuration. Even `www` variations and the original
 domain where your WordPress was installed in must be added. You'll probably see some unexpected output when accessing
 the site from a non-mapped domain.
 
@@ -121,54 +119,49 @@ and your page will be redirected. In this case, there are two ways to solve this
 
 == Changelog ==
 
+= 2.0.0 =
+* Tested with WordPress 6.6.
+* The minimum required WordPress version is now 4.9.
+* The minimum required PHP version is now 7.2.
+
 = 1.0.7 =
 * Changed the author to the new one.
-* Tested suport for WP 5.7
+* Tested support for WP 5.7
 
 = 1.0.6 =
-
 * Fix URI generated for canonical tag.
 
 = 1.0.5 =
-
 * Fixed issue with system routes when a base path is defined.
 
 = 1.0.4 =
-
 * Fixed assertions in admin views.
 
 = 1.0.3 =
-
 * Fixed XSS vulnerability in canonical/alternate tags.
 
 = 1.0.2 =
-
-* Added low memory option. (Refer to https://github.com/straube/multiple-domain/issues/45 on how to enable it)
+* Added a low memory option. (Refer to https://github.com/straube/multiple-domain/issues/45 on how to enable it)
 * Constants starting with `MULTPLE_` are now deprecated. They have a matching `MULTIPLE_` prefixed constant.
 * Fixed constants starting with `MULTPLE_`, changed to `MULTIPLE`.
 
 = 1.0.1 =
-
 * Fixed issue with regex used in domain replacement.
 
 = 1.0.0 =
-
 * Locked out instructions to readme file.
-* API to programmatically change the domains list.
+* API to programmatically change the domain list.
 * Don't add canonical link if settings are `false`.
 
 = 0.11.2 =
-
 * FAQ about removal of `hreflang` tags.
 * Fixed bug in domain replacement when it contains a slash (the regex delimiter).
 * Fixed issue in the domain replacement regex.
 
 = 0.11.1 =
-
 * Fixed URI validation when there is a domain's base restriction.
 
 = 0.11.0 =
-
 * Add CHANGELOG.md file.
 * Added option to enable canonical tags.
 * Added `%%multiple_domain%%` advanced variable for Yoast.
@@ -179,65 +172,52 @@ and your page will be redirected. In this case, there are two ways to solve this
 * Fixed issue with domain replacement.
 
 = 0.10.3 =
-
 * Added public method to retrieve a given (or current) domain base path: `getDomainBase($domain = null)`.
 * Minor code refactoring.
 
 = 0.10.2 =
-
-* Fix minor notice message when loading the non-mapped original domain.
+* Fix a minor notice message when loading the non-mapped original domain.
 * Added FAQ about plugin settings and domains.
 
 = 0.10.1 =
-
 * Fix bug introduced in 0.10.0 with setups where the original domain is not present in the plugin settings.
 
 = 0.10.0 =
-
 * Fix #31: Don't add SSL when accessing via a Tor domain name
 * Moved HTML to view files.
 
 = 0.9.0 =
-
 * Fixed bug in backward compatibility logic.
 * Added a class to `<body>` tag containing the domain name (e.g. `multipled-domain-name-tld`) to allow front-end customizations.
 
 = 0.8.7 =
-
 * Loading Multiple Domain before other plugins to fix issue with paths.
-* Fix #38: Missing locales on language list (this issue was reopened and now it's fixed)
+* Fix #38: Missing locales on a language list (this issue was reopened, and now it's fixed)
 * Refactored `initAttributes` method.
 
 = 0.8.6 =
-
 * Fix #39: Rolling back changes introduced in 0.8.4 and 0.8.5 regarding to avoid URL changes in the WP admin.
 
 = 0.8.5 =
-
 * Fixed an issue introduced in 0.8.4 that breaks the admin URLs.
-* Fix #38: Missing locales on language list
+* Fix #38: Missing locales on a language list.
 * Add `[multiple_domain]` shortcode to show the current language.
 
 = 0.8.4 =
-
 * Fix: #36 Wrong host in URLs returned by the JSON API
-* Using singleton pattern for main plugin class.
+* Using a singleton pattern for the main plugin class.
 * Avoiding URL changes in the admin panel.
 
 = 0.8.3 =
-
 * Fix: #34 hreflang tag error
 
 = 0.8.2 =
-
 * Fix: #32 Image URLs not being re-written properly via Tor.
 
 = 0.8.1 =
-
 * Fix: #23 Undefined index when using wp-cli.
 
 = 0.8.0 =
-
 * Moved `MultipleDomain` class to its own file.
 * Fix: #14 Remove `filter_input` from plugin.
 * Attempt to fix #22.
@@ -264,7 +244,7 @@ and your page will be redirected. In this case, there are two ways to solve this
     `<link rel="alternate" hreflang="de-DE" href="https://de.example.com/">`
 
 = 0.3 =
-* Fixed bug when removing the port from current domain.
+* Fixed bug when removing the port from the current domain.
 * Added `MULTIPLE_DOMAIN_ORIGINAL_DOMAIN` constant to hold the original WP home domain.
 * Allowing developers to create custom URL restriction logic through `multiple_domain_redirect` action.
 * Improved settings interface.
