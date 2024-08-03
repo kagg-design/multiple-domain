@@ -361,7 +361,7 @@ class Settings {
 		// Data are sent to the $path file.
 		$data = (array) $data;
 
-		require_once $path;
+		require $path;
 
 		return ob_get_clean();
 	}
