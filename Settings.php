@@ -276,7 +276,7 @@ class Settings {
 	 *
 	 * @return string The rendered field.
 	 */
-	private function get_lang_field( $count, string $lang = null ) {
+	private function get_lang_field( $count, ?string $lang = null ) {
 		/*
 		 * Backward compatibility with a locale defined in previous versions.
 		 *
@@ -349,7 +349,7 @@ class Settings {
 	 *
 	 * @return string The view contents.
 	 */
-	private function load_view( string $name, array $data = null ) {
+	private function load_view( string $name, ?array $data = null ) {
 		$path = sprintf( '%s/views/%s.php', dirname( MULTIPLE_DOMAIN_FILE ), $name );
 
 		if ( ! is_file( $path ) ) {
