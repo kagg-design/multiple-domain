@@ -2,21 +2,23 @@
 /**
  * Plugin Multiple Domain
  *
- * @package     multiple-domain
- * @author      goinput, kaggdesign
- * @license     GPL-2.0-or-later
+ * @package           multiple-domain
+ * @author            goinput, kaggdesign
+ * @license           GPL-2.0-or-later
  * @wordpress-plugin
  *
- * Plugin Name: Multiple Domain
- * Plugin URI:  https://github.com/straube/multiple-domain
- * Description: This plugin allows you to have multiple domains in a single WordPress installation and enables custom redirects for each domain.
- * Version:     2.0.0
- * Author:      goINPUT IT Solutions
- * Author URI:  http://goinput.de
- * License:     GPLv2 or later
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: multiple-domain
- * Domain Path: /languages/
+ * Plugin Name:       Multiple Domain
+ * Plugin URI:        https://github.com/straube/multiple-domain
+ * Description:       This plugin allows you to have multiple domains in a single WordPress installation and enables custom redirects for each domain.
+ * Version:           2.1.0
+ * Requires at least: 4.9
+ * Requires PHP:      7.2
+ * Author:            goINPUT IT Solutions
+ * Author URI:        http://goinput.de
+ * License:           GPLv2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       multiple-domain
+ * Domain Path:       /languages/
  */
 
 use MultipleDomain\Main;
@@ -33,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 2.0.0
  */
-const MULTIPLE_DOMAIN_VERSION = '2.0.0';
+const MULTIPLE_DOMAIN_VERSION = '2.1.0';
 
 /**
  * Path to the plugin dir.

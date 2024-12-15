@@ -2,8 +2,9 @@
 Contributors: sirjavik, mrelliwood, goinput, GustavoStraube, cyberaleks, jffaria, kaggdesign
 Tags: multiple, domains, redirect
 Requires at least: 4.9
-Tested up to: 6.6
-Stable tag: 2.0.0
+Tested up to: 6.7
+Requires PHP: 7.2
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -118,6 +119,10 @@ and your page will be redirected. In this case, there are two ways to solve this
 == Screenshots ==
 
 == Changelog ==
+
+= 2.1.0 =
+* Fixed deprecation errors with PHP 8.4.
+* Tested with WordPress 6.6.
 
 = 2.0.0 =
 * Tested with WordPress 6.6.
