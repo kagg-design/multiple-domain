@@ -122,7 +122,7 @@ and your page will be redirected. In this case, there are two ways to solve this
 
 = 2.1.0 =
 * Fixed deprecation errors with PHP 8.4.
-* Tested with WordPress 6.6.
+* Tested with WordPress 6.7.
 
 = 2.0.0 =
 * Tested with WordPress 6.6.
