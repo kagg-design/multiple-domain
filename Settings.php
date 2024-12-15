@@ -326,11 +326,11 @@ class Settings {
 		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen
 		$handle = fopen( dirname( MULTIPLE_DOMAIN_FILE ) . '/locales.csv', 'rb' );
 
-		$row = fgetcsv( $handle );
+		$row = fgetcsv( $handle, null, ',', '"', '\\'  );
 
 		while ( false !== $row ) {
 			$locales[ $row[0] ] = $row[1];
-			$row                = fgetcsv( $handle );
+			$row                = fgetcsv( $handle, null, ',', '"', '\\' );
 		}
 
 		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose
